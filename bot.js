@@ -647,7 +647,7 @@ client.on("roleCreate", async role => {
       if (entry.executor.roles.has(rol)) {
         let limito = await db.fetch(`limitrol_${entry.executor.id}`);
         let slimito = await db.fetch(`rollim_${role.guild.id}`);
-        if (slimito == limito || slimito > limito) {
+        if (slimito => limito) {
           role.delete();
           role.guild.members.get(entry.executor.id).kick();
           const embed = new Discord.RichEmbed()
@@ -703,7 +703,7 @@ client.on("roleCreate", async role => {
       if (entry.executor.roles.has(rol)) {
         let limito = await db.fetch(`limitrol_${entry.executor.id}`);
         let slimito = await db.fetch(`rollim_${role.guild.id}`);
-        if (slimito == limito || slimito > limito) {
+        if (slimito => limito) {
           role.delete();
           role.guild.members.get(entry.executor.id).kick();
           const embed = new Discord.RichEmbed()
